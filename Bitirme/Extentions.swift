@@ -6,3 +6,22 @@
 //
 
 import Foundation
+
+extension UserDefaults {
+
+    private enum Keys {
+
+        static let token = "token"
+
+    }
+
+    class var myKey: Bool {
+        get {
+            return UserDefaults.standard.String(forKey: Keys.token)
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: Keys.token)
+        }
+    }
+
+}
